@@ -14,7 +14,7 @@ const Navbar = () => {
 
       </>
     return (
-        <div className="navbar  w-11/12 mx-auto">
+        <div className="navbar  w-11/12 mx-auto all">
   <div className="navbar-start">
     
    

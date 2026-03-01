@@ -5,7 +5,7 @@ import Footer from '../Pages/Shared/Footer/Footer';
 
 const RootLayout = () => {
     return (
-       <div className='bg-white min-h-screen'>
+       <div className=' min-h-screen'>
             
         
             <div>

@@ -23,12 +23,12 @@ const Banner = () => {
                 </h1>
 
                
-                <p className="text-color-accent mt-6 mb-8 text-base leading-relaxed max-w-sm">
+                <p className="text-color-accent mt-6 mb-8 text-base leading-relaxed max-w-sm all">
                     Great platform for the job seeker that searching for new career heights and passionate about startups.
                 </p>
 
                 
-                <div className=" space-y-2 lg:flex gap-2 items-center bg-white shadow-md p-3 overflow-hidden border border-gray-100">
+                <div className=" all space-y-2 lg:flex gap-2 items-center bg-white shadow-md p-3 overflow-hidden border border-gray-100">
                    
                     <div className="flex items-center gap-2 px-4 py-3 flex-1 border-r border-gray-100
                     border-2">
@@ -41,7 +41,7 @@ const Banner = () => {
                     </div>
 
                     
-                    <div className="flex items-center gap-2 px-4 py-3 flex-1 border-gray-100
+                    <div className="flex items-center gap-2 px-4 py-3 flex-1 border-gray-100 all
                     border-2">
                         <CiLocationOn />
                         <select className="outline-none text-sm text-gray-500 w-full bg-transparent appearance-none cursor-pointer">
@@ -53,7 +53,7 @@ const Banner = () => {
                     </div>
 
                    
-                    <button className="btn my-btn text-white border-none rounded-none px-6 h-full py-3 text-sm font-semibold whitespace-nowrap">
+                    <button className="btn my-btn text-white border-none rounded-none px-6 h-full py-3 text-sm font-semibold allwhitespace-nowrap">
                         Search my job
                     </button>
                 </div>
@@ -66,7 +66,7 @@ const Banner = () => {
             </div>
 
            
-            <div className="hidden lg:block absolute right-0 bottom-0 h-full max-w-[480px]">
+            <div className="hidden lg:block absolute right-0 bottom-0 h-full max-w-[480px] ">
                
                
                 <img

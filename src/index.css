@@ -12,9 +12,9 @@
    themes: light --default,  dark --prefersdark;
 };
 
-*{
+ .all{
    font-family: "Epilogue", sans-serif;
-}
+} 
 
 
 @plugin "daisyui/theme" {
