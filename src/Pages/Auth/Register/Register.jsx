@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router';
+import useAuth from '../../../Hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const [showpassword,setShowPassword]=useState(true)
     const navigate = useNavigate();
+     const {createUser}=useAuth()
 
 
       const handleShowpassword=(e)=>{
@@ -23,7 +26,42 @@ const Register = () => {
 
 
      const handleRegister=(data)=>{
-        console.log(data)
+        //console.log(data)
+        createUser(data.email,data.password)
+        .then(result=>{
+            console.log(result)
+
+            const userData={
+                displayName:result.user.displayName,
+                email:result.user.email
+            }
+
+            fetch("http://localhost:3000/users", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userData),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.insertedId) {
+                    toast.success("Successfully Registered ");
+                  } else {
+                    toast.error( "Already Registered!");
+                  }
+                });
+
+
+      toast("successfully login")
+      navigate("/")
+    })
+    .catch(error=>
+      toast(error.code)
+    )
+
+            
+        
      }
     return (
          <div className="w-full max-w-sm shrink-0 bg-[#F8F8FD] p-5 rounded-2xl my-5">
@@ -41,6 +79,17 @@ const Register = () => {
 
                 {errors.name?.type === "required" && (
                  <p className='text-red-600 font-semibold'>Name is required</p>
+      )}
+
+
+
+            {/* email    */}
+                <label className="label">Email</label>
+                <input type="email" className="input" placeholder="Email" 
+                {...register("email" , { required: true })} />
+
+                {errors.email?.type === "required" && (
+                 <p className='text-red-600 font-semibold'>Email is required</p>
       )}
 
       

@@ -6,6 +6,8 @@ import FindJobs from "../Pages/Home/FindJobs/FindJobs";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Auth/Login/Login";
 import Register from "../Pages/Auth/Register/Register";
+import PrivateRoute from "./PrivateRoutes";
+import AddJobs from "../Pages/AddJobs/AddJobs";
 
 
 
@@ -23,6 +25,12 @@ export const router = createBrowserRouter([
         {
         path:"find-jobs",
         element:<FindJobs></FindJobs>
+      },
+      {
+         path:"add-jobs",
+        element:<PrivateRoute>
+          <AddJobs></AddJobs>
+        </PrivateRoute>
       }
        
       

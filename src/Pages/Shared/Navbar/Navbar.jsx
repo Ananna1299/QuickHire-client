@@ -1,14 +1,33 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router';
 import Logo from '../../../Components/Logo/Logo';
+import useAuth from '../../../Hooks/useAuth';
 
 const Navbar = () => {
 
+  const { logout,user}=useAuth()
+
+  const handleSignout=()=>{
+    logout()
+    .then((result)=>{
+      console.log(result)
+
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+  }
     const links=<>
     <li><NavLink to="/" className="color-accent font-bold hover:text-primary ">Home</NavLink></li>
     <li><NavLink to="/find-jobs" className="color-accent font-bold hover:text-primary ">Find Jobs</NavLink></li>
      
       <li><NavLink to="/browse-companies" className="color-accent font-bold hover:text-primary ">Browse Companies</NavLink></li>
+      {
+          user && <>
+          <li><NavLink to="/add-jobs" className="color-accent font-bold hover:text-primary ">Add Jobs</NavLink></li>
+          
+          </>
+        }
 
        
 
@@ -28,7 +47,13 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     <div className='gap-5 hidden md:flex'>
-         <Link to="/login" className="btn bg-white text-primary  border-none ">Login</Link>
+      {
+            user?<button onClick={handleSignout} className='btn bg-white text-primary  border-none '>Sign Out</button>:
+             <Link to="/login" className="btn bg-white text-primary  border-none ">Login</Link>
+
+           
+          }
+         
         <Link to="/register"  className="btn my-btn text-white border-none">SignUp</Link>
     </div>
      <div className="dropdown">
@@ -40,7 +65,13 @@ const Navbar = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         {links}
         <li>
-          <Link to="/login" className="color-accent font-bold hover:text-primary ">Login</Link>
+          {
+            user?<button onClick={handleSignout} className='font-semibold color-accent text-primary'>Sign Out</button>:
+             <Link to="/login" className="color-accent font-bold hover:text-primary ">Login</Link>
+
+           
+          }
+        
         </li>
         <li>
            <Link to="/register" className="color-accent font-bold hover:text-primary ">SignUp</Link>
