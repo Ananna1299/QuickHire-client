@@ -2,6 +2,10 @@ import { createBrowserRouter } from "react-router";
 import Home from "../Pages/Home/Home/Home";
 import RootLayout from "../Layouts/RootLayout";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import FindJobs from "../Pages/Home/FindJobs/FindJobs";
+import AuthLayout from "../Layouts/AuthLayout";
+import Login from "../Pages/Auth/Login/Login";
+import Register from "../Pages/Auth/Register/Register";
 
 
 
@@ -16,9 +20,29 @@ export const router = createBrowserRouter([
             index:true,
             Component:Home
         },
+        {
+        path:"find-jobs",
+        element:<FindJobs></FindJobs>
+      }
        
       
 
     ]
   },
+
+  {
+    path:"/",
+    element:<AuthLayout></AuthLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
+    children:[
+      {
+        path:"login",
+        element:<Login></Login>
+      },
+      {
+        path:"register",
+        element:<Register></Register>
+      }
+    ]
+  }
 ]);

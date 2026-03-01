@@ -28,8 +28,8 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     <div className='gap-5 hidden md:flex'>
-         <Link className="btn bg-white text-primary  border-none ">Login</Link>
-        <Link className="btn my-btn text-white border-none">SignUp</Link>
+         <Link to="/login" className="btn bg-white text-primary  border-none ">Login</Link>
+        <Link to="/register"  className="btn my-btn text-white border-none">SignUp</Link>
     </div>
      <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
@@ -40,10 +40,10 @@ const Navbar = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         {links}
         <li>
-          <Link className="color-accent font-bold hover:text-primary ">Login</Link>
+          <Link to="/login" className="color-accent font-bold hover:text-primary ">Login</Link>
         </li>
         <li>
-           <Link className="color-accent font-bold hover:text-primary ">SignUp</Link>
+           <Link to="/register" className="color-accent font-bold hover:text-primary ">SignUp</Link>
         </li>
       </ul>
     </div>
