@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "tailwindcss";
+@plugin "daisyui"{
+   themes: light --default,  dark --prefersdark;
+};
+
+*{
+   font-family: "Epilogue", sans-serif;
+}
+
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #4640DE;
+  --color-secondary: #26A4FF;
+ --color-base-200:#25324B;
+  --color-base-300:#CCCCF5;
+  --color-accent:#515B6F;
+  
+}
+
+.bannerfont{
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.active{
+  text-decoration: underline;
+  
+}
