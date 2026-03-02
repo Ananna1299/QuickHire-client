@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const JobCard = ({job}) => {
-    const { title, company, location, type, description, tags} = job;
+    const { title, company, location, type, description, tags,_id} = job;
     console.log(title)
 
     const getTagStyle = (tagName) => {
@@ -47,7 +48,7 @@ const JobCard = ({job}) => {
 
   const tagStyle = getTagStyle(tags);
     return (
-       <div className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:border-blue-400 transition-all duration-200 cursor-pointer group">
+       <Link to={`/job-details/${_id}`} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:border-blue-400 transition-all duration-200 cursor-pointer group">
      
       <div className="flex items-start justify-end gap-3 mb-2 flex-wrap">
         <span className="inline-flex items-center px-2.5 py-0.5  text-xs font-medium  text-primary border border-primary whitespace-nowrap ">
@@ -81,7 +82,7 @@ const JobCard = ({job}) => {
           </span>
         </div>
      
-    </div>
+    </Link>
   );
 };
     ;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Loader from '../../../Components/Loader/Loader';
 import JobCard from '../../../Components/JobCard/JobCard';
+import Logo from '../../../Components/Logo/Logo';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const FindJobs = () => {
 
@@ -34,8 +36,13 @@ const FindJobs = () => {
         })
 },[search,category])
 
+
+
     return (
-        <div className="w-11/12 mx-auto my-16">
+        <div>
+            <Navbar></Navbar>
+            <div className="w-11/12 mx-auto my-16">
+            
 
             <h2 className="text-4xl font-bold text-center mb-10 text-primary font-['Clash_Display'] ">
                 All Jobs
@@ -108,6 +115,9 @@ const FindJobs = () => {
 
       
     </div>
+        </div>
+        
+        
     );
 };
 

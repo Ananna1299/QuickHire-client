@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
+import Navbar from '../Shared/Navbar/Navbar';
 
 const AddJob = () => {
 
@@ -52,7 +53,9 @@ const AddJob = () => {
     };
 
     return (
-        <div className='w-11/12 mx-auto my-12'>
+        <div>
+            <Navbar></Navbar>
+             <div className='w-11/12 mx-auto my-12'>
             <h2 className="text-4xl font-bold text-center mb-10 text-primary font-['Clash_Display'] ">
                 Post a New Job
             </h2>
@@ -165,6 +168,8 @@ const AddJob = () => {
 
             </form>
         </div>
+        </div>
+       
     );
 };
 

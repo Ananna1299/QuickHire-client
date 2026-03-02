@@ -21,10 +21,17 @@ const Navbar = () => {
     <li><NavLink to="/" className="color-accent font-bold hover:text-primary ">Home</NavLink></li>
     <li><NavLink to="/find-jobs" className="color-accent font-bold hover:text-primary ">Find Jobs</NavLink></li>
      
-      <li><NavLink to="/browse-companies" className="color-accent font-bold hover:text-primary ">Browse Companies</NavLink></li>
+      
       {
           user && <>
           <li><NavLink to="/add-jobs" className="color-accent font-bold hover:text-primary ">Add Jobs</NavLink></li>
+          
+          </>
+        }
+
+        {
+          user && <>
+          <li><NavLink to="/my-added" className="color-accent font-bold hover:text-primary ">My Added Jobs</NavLink></li>
           
           </>
         }
@@ -73,6 +80,8 @@ const Navbar = () => {
           }
         
         </li>
+
+        
         <li>
            <Link to="/register" className="color-accent font-bold hover:text-primary ">SignUp</Link>
         </li>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { Link } from 'react-router';
 import JobCard from '../../../../Components/JobCard/JobCard';
+import Loader from '../../../../Components/Loader/Loader';
 
 const Categories = () => {
      const [jobs, setJobs] = useState([]);
@@ -25,6 +26,10 @@ const Categories = () => {
                 setLoading(false);
             });
     }, []);
+
+if (loading){
+    return <Loader></Loader>
+}
     return (
         <div className='w-11/12 mx-auto my-16'>
             <div className='flex items-center justify-between'>
